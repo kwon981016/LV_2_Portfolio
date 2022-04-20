@@ -1,0 +1,53 @@
+<html>
+{% extends "base.html" %} {% block content %}
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"
+            rel="stylesheet"
+        />
+        <title>얼굴형 검사기</title>
+
+        <style type="text/css">
+            	div {
+            		font-family: 'Gamja Flower', cursive;}
+
+                   #b0 { border : 1px black; }
+
+                   #b2 { border : 3px outset black;
+                        padding : 10px;   overflow:auto; resize:both; }
+            }
+        </style>
+    </head>
+<div class="main">
+  <div class="title">
+    <h3>얼굴형 검사기</h3>
+  </div>
+
+  <div class="panel">
+    <input id="file-upload" class="hidden" type="file" accept="image/x-png,image/gif,image/jpeg" />
+    <label for="file-upload" id="file-drag" class="upload-box">
+      <div id="upload-caption">사진을 넣어주세요</div>
+      <img id="image-preview" class="hidden" />
+    </label>
+  </div>
+  <div style="margin-bottom: 2rem;">
+    <input type="button" value="Submit" class="button" onclick="submitImage();" />
+    <input type="button" value="Clear" class="button" onclick="clearImage();" />
+  </div>
+
+  <div id="image-box">
+    <img id="image-display" />
+    <div id="pred-result" class="hidden"></div>
+    <svg id="loader" class="hidden" viewBox="0 0 32 32" width="32" height="32">
+      <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+    </svg>
+  </div>
+</div>
+
+/>
+    <div align='center'> <a href="/eyewear"> 얼굴형에 맞는 안경 추천 받기 </a> </div>
+
+{% endblock %}
+</html>
